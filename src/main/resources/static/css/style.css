@@ -1,0 +1,16 @@
+.centered {
+  position: fixed; /* or absolute */
+  top: 30%;
+  left: 45%;
+}
+
+.centered1 {
+  position: fixed; /* or absolute */
+  top: 30%;
+  left: 10%;
+  right: 10%;
+}
+
+table.fixed { border: 1px solid black; table-layout:fixed; width:100%;}/*Setting the table width is important!*/
+table.fixed td {overflow:hidden; text-align:center}/*Hide text outside the cell.*/
+table.fixed td {height:100px;border: 1px solid black;width:40px;}/*Setting the width of column 1.*/

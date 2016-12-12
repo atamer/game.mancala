@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/sockjs/0.3.4/sockjs.min.js"></script>
+    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+    <script type="text/javascript" src="js/game.js"></script>
+
+
+</head>
+
+<body>
+
+<div class="centered" id="enter">
+    <div style="margin-left:-100px"><h1>It is Kamala Game</h1></div>
+    <button style="width:100px;height:50px;font-size:20px" class="btn-primary" id="enjoy">Enjoy</button>
+</div>
+
+
+<div class="centered1" id="game" style="display:none">
+
+
+    <table class="fixed">
+
+        <tr>
+            <td>
+                <div id="started" class="alert alert-success">
+                    <strong>STARTED!</strong>
+                </div>
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                <div>OPPONENT</div>
+                <div id="turn_p" style="display:none">TURN</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table class="fixed">
+                    <tr id="opponentTable">
+
+
+                        <td th:each="i : ${#numbers.sequence( size*2+1, size,-1)}" th:attr="data-index=${i}"
+                            th:rowspan="${i == size || i == size * 2 + 1}?2">
+                            <div th:text="${i != size  and i != size * 2 + 1}?${count}:0">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr id="yourTable">
+                        <td th:each="i : ${#numbers.sequence( 0, size-1)}" th:attr="data-index=${i}">
+                            <div th:text="${count}">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>YOU</div>
+                <div id="turn_y" style="display:none">TURN</div>
+            </td>
+        </tr>
+    </table>
+
+
+</div>
+
+
+</body>
+
+</html>
